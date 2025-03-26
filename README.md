@@ -63,3 +63,126 @@ Basically, ভেক্টর ডাটাবেজ বিশেষভাবে 
 এআই, সার্চ, ও রিকমেন্ডেশন সিস্টেমের মতো ক্ষেত্রে ভেক্টর ডাটাবেজ বেশি কার্যকর, আর রিলেশনাল ডাটাবেজ ব্যাংকিং, অ্যাকাউন্টিং ও অন্যান্য ট্রানজেকশনাল ডাটা ম্যানেজমেন্ট-এ বেশি ব্যবহৃত হয়।
 
 #VectorDatabase #AI #MachineLearning #DataManagement #BigData #SimilaritySearch #DeepLearning #NeuralSearch #ScalableStorage #NLP #LLM
+
+
+45+ AI tools to finish months of work in minutes.
+
+1. Research
+
+- ChatGPT
+- Claude 
+- Copilot
+- Gemini
+- Abacus
+- Perplexity 
+
+2. Image
+
+- Fotor
+- Dalle 3
+- Stability AI
+- Midjourney
+
+3. CopyWriting
+
+- Rytr
+- Copy AI
+- Writesonic
+- Adcreative AI
+- otio
+
+4. Writing
+
+- Jasper
+- HIX AI
+- Jenny AI
+- Textblaze
+- Quillbot
+
+5. Website
+
+- 10Web
+- Durable
+- Framer
+- Style AI
+- Landingsite
+
+6. Video
+
+- Klap
+- Vidnoz 
+- Opus
+- Eightify
+- InVideo
+- HeyGen
+- Runway
+- ImgCreator AI
+- Morphstudio .xyz
+
+7. Meeting
+
+- Tldv
+- Otter
+- Noty AI
+- Fireflies
+
+8. SEO
+
+- VidIQ
+- Seona AI
+- BlogSEO
+- Keywrds ai
+- Seona
+
+9. Chatbot
+
+- Droxy
+- Chatbase
+- Mutual info
+- Chatsimple
+
+10. Presentation
+
+- Decktopus
+- Slides AI
+- Gamma AI
+- Designs AI
+- Beautiful AI
+- PopAi
+
+11. Automation
+
+- Make
+- Zapier
+- Xembly
+- Bardeen
+
+12. UI/UX
+
+- Figma
+- Uizard
+- UiMagic
+- Photoshop
+
+13. Design
+
+- Canva
+- Flair AI
+- Clipdrop
+- Autodraw
+- Magician design
+
+14. Logo Generator
+
+- Looka
+- Designs AI
+- Brandmark
+- Stockimg AI
+- Namecheap
+
+15. Audio
+
+- Lovo ai
+- Eleven labs
+- Songburst AI
+- Adobe Podcast
