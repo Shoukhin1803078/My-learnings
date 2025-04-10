@@ -21,7 +21,7 @@ cd myproject
 
 # Create an app within your project
 python manage.py startapp myapp
-
+```
 myproject/
     manage.py                # Command-line utility for admin tasks
     myproject/               # Project package
@@ -38,3 +38,4 @@ myproject/
         views.py             # View functions/classes
         tests.py             # Tests
         migrations/          # Database migrations
+```
