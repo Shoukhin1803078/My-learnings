@@ -1,5 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env # Also ignore any .env files containing secrets
