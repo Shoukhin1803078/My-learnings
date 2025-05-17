@@ -52,3 +52,12 @@ Create and switch in one command:
 
 Merge branches:
 - > git merge branch-name
+
+
+# 🚀 Basic Git Workflow
+- > Clone the repository
+- > Create a new branch
+- > Make changes
+- > Add and commit the changes
+- > Push the changes to the remote repo
+- > Create a pull request / merge branch
