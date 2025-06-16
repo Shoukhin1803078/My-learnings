@@ -10,5 +10,5 @@ async def read_root():
 @app.get("/item/{item_id}")
 async def read_root(item_id:str):
     return {
-        "message":item_id
+        "message":f"item id =={item_id}"
     }
