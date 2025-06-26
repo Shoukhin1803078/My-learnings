@@ -1,0 +1,70 @@
+SELECT
+  order_photos.file_name AS "order_photos.file_name",
+  template_insert_histories.description_template_id as "template_insert_histories.description_template_id"
+FROM
+  orders
+JOIN
+  order_photos ON orders.id = order_photos.order_id
+JOIN
+  order_items ON orders.id = order_items.order_id
+JOIN
+  template_insert_histories ON order_items.id = template_insert_histories.order_item_id
+WHERE
+  orders.id = 44206
+ORDER BY
+  order_photos.file_name, template_insert_histories.description_template_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Universal table for specific order_id:
+
+
+
+  query = """
+SELECT
+  order_photos.file_name AS "order_photos.file_name",
+  orders.id AS "orders.id",
+  orders.internal_memo AS "orders.internal_memo",
+  orders.customer_memo AS "orders.customer_memo",
+  order_items.description AS "order_items.description",
+  order_items.id AS "order_items.id",
+  order_items.item_name AS "order_items.item_name",
+  order_items.brand AS "order_items.brand",
+  template_insert_histories.description_template_id AS "template_insert_histories.description_template_id",
+  description_templates.name AS "description_templates.name",
+  description_templates.doctor_content AS "description_templates.doctor_content",
+  chat_data.messages_sender_status_1 AS "chats.messages_sender_status_1",
+  chat_data.messages_sender_status_2 AS "chats.messages_sender_status_2"
+FROM orders
+JOIN order_photos ON orders.id = order_photos.order_id
+JOIN order_items ON orders.id = order_items.order_id
+JOIN template_insert_histories ON order_items.id = template_insert_histories.order_item_id
+JOIN template_insert_histories ON template_insert_histories.description_template_id = description_templates.id
+LEFT JOIN (
+  SELECT 
+    order_id,
+    GROUP_CONCAT(CASE WHEN sender_status = 1 THEN message END ORDER BY send_date SEPARATOR ' | ') AS messages_sender_status_1,
+    GROUP_CONCAT(CASE WHEN sender_status = 2 THEN message END ORDER BY send_date SEPARATOR ' | ') AS messages_sender_status_2
+  FROM chats 
+  WHERE message IS NOT NULL 
+  GROUP BY order_id
+) AS chat_data ON orders.id = chat_data.order_id
+WHERE orders.id = 44206
+ORDER BY order_photos.file_name;
+"""
+
+
+
+
+
+Universal table for all order_id:

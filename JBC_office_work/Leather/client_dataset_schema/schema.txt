@@ -1,0 +1,329 @@
+-- Leather_repair_db.brands definition
+
+CREATE TABLE `brands` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `brand` varchar(1000) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+-- Leather_repair_db.chats definition
+
+CREATE TABLE `chats` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `sender_status` tinyint(4) DEFAULT NULL,
+  `send_user_id` bigint(20) NOT NULL DEFAULT 0,
+  `send_date` datetime DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `is_display` tinyint(4) DEFAULT NULL,
+  `photo_name` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `chats_order_id_index` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65786 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+-- Leather_repair_db.configs definition
+
+CREATE TABLE `configs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(255) DEFAULT NULL,
+  `contact_email` varchar(255) DEFAULT NULL,
+  `sender_email` varchar(255) DEFAULT NULL,
+  `large_categories_doctor_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `large_categories_karte_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `medium_categories_doctor_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `medium_categories_karte_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `templates_doctor_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `templates_karte_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+-- Leather_repair_db.description_templates definition
+
+CREATE TABLE `description_templates` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `medium_category_id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `doctor_content` text DEFAULT NULL,
+  `karte_content` text DEFAULT NULL,
+  `template_doctor_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `template_karte_edit_flag` bigint(20) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `description_templates_medium_category_id_index` (`medium_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1610 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+-- Leather_repair_db.destination_addresses definition
+
+CREATE TABLE `destination_addresses` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `address_type` varchar(255) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `name_kana` varchar(40) DEFAULT NULL,
+  `tel` varchar(13) DEFAULT NULL,
+  `zip_code` varchar(8) DEFAULT NULL,
+  `prefecture` varchar(40) DEFAULT NULL,
+  `city` varchar(40) DEFAULT NULL,
+  `address` varchar(40) DEFAULT NULL,
+  `building_name` varchar(40) DEFAULT NULL,
+  `honorific` varchar(4) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `destination_addresses_order_id_index` (`order_id`),
+  KEY `destination_addresses_address_type_index` (`address_type`)
+) ENGINE=InnoDB AUTO_INCREMENT=68064 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+-- Leather_repair_db.failed_jobs definition
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+-- Leather_repair_db.large_categories definition
+
+CREATE TABLE `large_categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `sort` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+-- Leather_repair_db.medium_categories definition
+
+CREATE TABLE `medium_categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `large_category_id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `medium_categories_large_category_id_index` (`large_category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=393 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+-- Leather_repair_db.migrations definition
+
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- Leather_repair_db.order_items definition
+
+CREATE TABLE `order_items` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `item_code` varchar(166) DEFAULT NULL,
+  `item_name` varchar(1000) DEFAULT NULL,
+  `brand` varchar(1000) DEFAULT NULL,
+  `quantity` int(11) DEFAULT 1,
+  `description` text DEFAULT NULL,
+  `karte_description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `order_items_order_id_index` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72456 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+
+-- Leather_repair_db.order_photos definition
+
+CREATE TABLE `order_photos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `file_group` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `order_photos_order_id_index` (`order_id`),
+  KEY `order_photos_file_name_index` (`file_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=309719 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+-- Leather_repair_db.orders definition
+
+CREATE TABLE `orders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `url_uid` varchar(255) NOT NULL,
+  `order_number` varchar(40) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `new_message_flag` tinyint(4) NOT NULL DEFAULT 0,
+  `internal_memo` text DEFAULT NULL,
+  `customer_memo` text DEFAULT NULL,
+  `mail_address` text DEFAULT NULL,
+  `order_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `edit_user_id` bigint(20) NOT NULL DEFAULT 0,
+  `customer_browse_date` datetime DEFAULT NULL,
+  `company_browse_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `orders_url_uid_index` (`url_uid`),
+  KEY `orders_order_number_index` (`order_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=68064 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+-- Leather_repair_db.password_resets definition
+
+CREATE TABLE `password_resets` (
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+-- Leather_repair_db.payments definition
+
+CREATE TABLE `payments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `code` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `payments_code_index` (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+-- Leather_repair_db.send_mail_histories definition
+
+CREATE TABLE `send_mail_histories` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_number` varchar(40) NOT NULL,
+  `mail_address` text DEFAULT NULL,
+  `contents` tinyint(4) NOT NULL,
+  `send_date` datetime NOT NULL,
+  `send_status` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `send_mail_histories_order_number_index` (`order_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=132896 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+
+-- Leather_repair_db.status_histories definition
+
+CREATE TABLE `status_histories` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `before_status` tinyint(4) DEFAULT NULL,
+  `after_status` tinyint(4) DEFAULT NULL,
+  `note` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=188757 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+
+-- Leather_repair_db.template_insert_histories definition
+
+CREATE TABLE `template_insert_histories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_item_id` int(11) NOT NULL,
+  `description_template_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_item_number` tinyint(4) NOT NULL,
+  `order_item_unique_code` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `insert_index` (`order_item_id`,`description_template_id`),
+  KEY `template_insert_histories_user_id_index` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=78778 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+
+-- Leather_repair_db.users definition
+
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `login_id` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` tinyint(4) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_login_id_unique` (`login_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;    
+-- Leather_repair_db.work_descriptions definition
+
+CREATE TABLE `work_descriptions` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `order_item_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `unit_price` int(11) DEFAULT NULL,
+  `assign_work_description` tinyint(1) NOT NULL DEFAULT 1,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `work_descriptions_order_item_id_index` (`order_item_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=247 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
