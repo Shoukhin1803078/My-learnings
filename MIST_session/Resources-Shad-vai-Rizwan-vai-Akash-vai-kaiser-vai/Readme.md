@@ -1,3 +1,7 @@
+ALL resources link including linux, aws, frontend:
+https://drive.google.com/drive/u/0/folders/1YyWcKSfXykQ_zEhDWR1TpMx1zLuFL6IP
+
+Kaiser_vai Session:
 Deep Learning + LLM resources:
 1. Andrej Karpathy:
 https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ
