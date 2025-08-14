@@ -1,26 +1,37 @@
+# pip freeze > requirements.txt
 
 # Create a virtual environment
+
 python -m venv django_env
 
 # Activate it (Windows)
+
 django_env\Scripts\activate
 
 # Activate it (macOS/Linux)
+
 source django_env/bin/activate
 
 # Install Django
+
 pip install django
 
-
-
 # Create a new project
+
 django-admin startproject myproject
 
 # Navigate to the project
+
 cd myproject
 
+# Run Django project
+
+python3 manage.py runserver
+
 # Create an app within your project
-python manage.py startapp myapp
+
+python3 manage.py startapp myapp
+
 ```
 myproject/
     manage.py                # Command-line utility for admin tasks
