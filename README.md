@@ -1,5 +1,7 @@
-# My-All-learnings 
+# My-All-learnings.
+
 # RAG build :
+
 https://sifat-hasan.gitbook.io/langchain-hand-book
  https://playwithrag.streamlit.app/
 🌟🌟AI-চালিত ডাটা ম্যানেজমেন্টের ভবিষ্যৎ: Vector Database.
@@ -67,17 +69,16 @@ Basically, ভেক্টর ডাটাবেজ বিশেষভাবে 
 
 #VectorDatabase #AI #MachineLearning #DataManagement #BigData #SimilaritySearch #DeepLearning #NeuralSearch #ScalableStorage #NLP #LLM
 
-
 45+ AI tools to finish months of work in minutes.
 
 1. Research
 
 - ChatGPT
-- Claude 
+- Claude
 - Copilot
 - Gemini
 - Abacus
-- Perplexity 
+- Perplexity
 
 2. Image
 
@@ -113,7 +114,7 @@ Basically, ভেক্টর ডাটাবেজ বিশেষভাবে 
 6. Video
 
 - Klap
-- Vidnoz 
+- Vidnoz
 - Opus
 - Eightify
 - InVideo
