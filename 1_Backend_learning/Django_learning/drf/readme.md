@@ -1,4 +1,6 @@
-# **step-1** 
+# Drf folder tay way-2 use kore django project create kora sob jayagay
+
+# **step-1**
 
 - **python3 -m venv env
   source env/bin/activate**
@@ -7,28 +9,75 @@
 
 # **step-2: project create and going inside project**
 
+**way-1 (with dot) :** i am inside a root folder . Now i wanna create a django project
+
+```
+cd root
+python3 -m venv venv
+source venv/bin/activate
+django-admin startproject mydjangoproject .
+```
+
+```
+Initial folder structure:
+
+root/
+    venv
+
+
+
+After Creating django project Folder structure:
+root/
+    venv
+    manage.py
+    mydjangoproject
+          __init__.py
+          settings.py
+          urls.py
+          asgi.py
+          wsgi.py
+  
+```
+
+**way-2 (without dot ) :** i wanna create a folder and on that folder i wanna create a django project parallelly
+
 - **django-admin startproject myproject**
 
+
 ```
-myproject/
-    manage.py
-   myproject/
-        __init__.py
-        settings.py
-        urls.py
-        asgi.py
-        wsgi.py
+Initial folder structure
+
+
+root/
+    venv
 ```
 
-- **cd practice3**
+
+```
+After creating djangoproject folder structure :
+
+root/
+    venv
+    myproject/
+             manage.py
+             myproject/
+                      __init__.py
+                      settings.py
+                      urls.py
+                      asgi.py
+                      wsgi.py
+```
+
+- **cd myproject**
 - **python3 manage.py runserver**
 
-# **Step-3: app create and add into INSTALLED_APPS for** 
+# **Step-3: app create and add into INSTALLED_APPS for**
 
 - > **python3 manage.py startapp myapp**
   >
 
 ```
+venv
 myproject/
     manage.py                # Command-line utility for admin tasks
     myproject/               # Project package
@@ -46,8 +95,6 @@ myproject/
         tests.py             # Tests
         migrations/          # Database migrations
 ```
-
-
 
 External app "rest_framework" is also added. As we install djangorestframework in venv
 
@@ -80,7 +127,6 @@ urlpatterns = [
     path('with_primary_key/<int:pk>',SinglePersonAPIView.as_view())
 ]
 ```
-
 
 **Include it into myproject/urls.py--->**
 
