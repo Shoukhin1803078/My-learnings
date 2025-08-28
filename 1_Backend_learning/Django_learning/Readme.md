@@ -1,3 +1,7 @@
+# Ayan vai link:
+
+[https://ayans-corner.notion.site/]()
+
 # Drf folder tay way-2 use kore django project create kora sob jayagay
 
 # **step-1**
