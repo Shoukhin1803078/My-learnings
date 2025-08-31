@@ -6,8 +6,12 @@ from .models import Name
 
 
 
-from django.contrib.auth.models import User
-from rest_framework import serializers
+# from django.contrib.auth.models import User
+# from rest_framework import serializers
+
+
+
+
 
 
 
@@ -65,11 +69,6 @@ class NameSerializer(serializers.ModelSerializer):
 
 
 
-
-
-
-
-
 class SignupSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)
 
@@ -81,7 +80,6 @@ class SignupSerializer(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
-        # hash password properly
         user = User.objects.create_user(
             username=validated_data["username"],
             email=validated_data.get("email", ""),
