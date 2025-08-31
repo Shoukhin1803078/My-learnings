@@ -16,6 +16,7 @@ cd root
 python3 -m venv venv
 source venv/bin/activate
 django-admin startproject mydjangoproject .
+python3 manage.py runserver
 ```
 
 ```
@@ -43,7 +44,6 @@ root/
 
 - **django-admin startproject myproject**
 
-
 ```
 Initial folder structure
 
@@ -51,7 +51,6 @@ Initial folder structure
 root/
     venv
 ```
-
 
 ```
 After creating djangoproject folder structure :
