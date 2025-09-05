@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class SignupSerializer(serializers.ModelSerializer): 
     # password = serializers.CharField(write_only=True, min_length=8) # write only mane holo password shudhu db te write kora jabe but read kora jabe na that means Objects.get_all() dile password bad e bakisob access/get korte parbo frontend theke otherwise na.
-    password = serializers.CharField(min_length=8) # Eti use korle password ke read kora jabe through GET endpoint or password ke read kora jabe  
+    password = serializers.CharField( min_length=8) # Eti use korle password ke read kora jabe through GET endpoint or password ke read kora jabe  
 
     class Meta:
         model = User
@@ -37,8 +37,7 @@ class SignupSerializer(serializers.ModelSerializer):
         # Step 3: Save user
         user.save()
         return user
-
-    # ----------------------------
+                                                                                                                                                                                                    # ----------------------------
     # 🔹 Way 2: Using create_user() shortcut
     # ----------------------------
     # def create(self, validated_data):
@@ -48,7 +47,9 @@ class SignupSerializer(serializers.ModelSerializer):
     #         password=validated_data["password"],  # will be hashed
     #     )
     #     return user
-
+    
+    
+  
 
 
 
@@ -75,5 +76,6 @@ class SignupSerializer(serializers.ModelSerializer):
     
 # a=A(tk="50",data={"username":"abc","email":"shoukhin@gmail.com"})
 # a.display()
+
 
 
