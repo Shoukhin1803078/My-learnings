@@ -1,3 +1,11 @@
+# Drf basics youtube chanel:
+
+https://www.youtube.com/@codeaura5138
+
+https://www.youtube.com/watch?v=EvHLHP1BoyY&list=PL9IQMKMsCWh6TqvjrRCZkD0vHbWaJJ0kN&index=4
+
+
+
 # Drf folder tay way-2 use kore django project create kora sob jayagay
 
 # **step-1**

@@ -1,5 +1,6 @@
-# Chatgpt-Prompt (4_user_authentication_with_custom_model):
+# https://www.youtube.com/watch?v=5x97gGspzjY&list=PLDttaS3rzj8BYHw9H66GlohMgpYBqNyjL&index=6
 
+# Chatgpt-Prompt (4_user_authentication_with_custom_model):
 
 Build a full role-based user management system with JWT + DRF 🔥.
 This will include:
@@ -170,9 +171,6 @@ python manage.py migrate
 python manage.py runserver
 
 # -------------------------------------------------------------------------------------Chatgpt - Reply------------------------------
-
-
-
 
 # Role-based user management (DRF + JWT) — full code for `views.py` + `urls.py` (and supporting serializer updates)
 
